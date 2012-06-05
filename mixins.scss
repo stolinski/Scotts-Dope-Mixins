@@ -1,0 +1,26 @@
+/* Scott's Dope Mixins
+AKA Mixins that I frequenly use
+v0.1*/
+
+
+
+@mixin transition($sec: 0.2s) {
+  -webkit-transition: all $sec ease-out;
+     -moz-transition: all $sec ease-out;
+      -ms-transition: all $sec ease-out;
+       -o-transition: all $sec ease-out;
+          transition: all $sec ease-out;
+}
+
+
+
+
+/* REQUIRES COMPASS */
+@mixin gradient($start, $stop:false) {
+    @if $stop {
+        @include background-image(linear-gradient($start, $stop));
+    } @else {
+        @include background-image(linear-gradient($start, $start - 20));
+    }
+    
+}
