@@ -3,7 +3,7 @@ AKA Mixins that I frequenly use
 v0.1*/
 
 
-
+/* A less configurable but more areodynamic transition mixin */
 @mixin transition($sec: 0.2s) {
   -webkit-transition: all $sec ease-out;
      -moz-transition: all $sec ease-out;
@@ -16,6 +16,9 @@ v0.1*/
 
 
 /* REQUIRES COMPASS */
+
+/* Faster gradients, if a stop is not specified a -20 of the start 
+is assigned for you this may be adjustable in the near future */
 @mixin gradient($start, $stop:false) {
     @if $stop {
         @include background-image(linear-gradient($start, $stop));
