@@ -1,6 +1,6 @@
 /* Scott's Dope Mixins
 AKA Mixins that I frequenly use
-v0.1*/
+v0.3*/
 
 
 /* A less configurable but more areodynamic transition mixin */
@@ -13,11 +13,16 @@ v0.1*/
 }
 
 
+/* A re-useable font mixin for whatever fonts you are using, allows for an optional color argument */
+@mixin serif($size, $color:"") {
+    color: $color;
+    font: italic normal $size 'Droid Serif';
+}
 
 
 /* REQUIRES COMPASS */
 
-/* Faster gradients, if a stop is not specified a -20 of the start 
+/* Faster gradients, if a stop is not specified a -20 of the start
 is assigned for you this may be adjustable in the near future */
 @mixin gradient($start, $stop:false) {
     @if $stop {
@@ -25,5 +30,5 @@ is assigned for you this may be adjustable in the near future */
     } @else {
         @include background-image(linear-gradient($start, $start - 20));
     }
-    
+
 }
