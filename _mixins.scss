@@ -2,12 +2,39 @@
 
 
 /* A less configurable but more areodynamic transition mixin */
-@mixin transition($sec: 0.2s) {
+@mixin trans($sec: 0.2s) {
   -webkit-transition: all $sec ease-out;
      -moz-transition: all $sec ease-out;
       -ms-transition: all $sec ease-out;
        -o-transition: all $sec ease-out;
           transition: all $sec ease-out;
+}
+
+/* Removes margin and padding and list style from lists */
+@mixin noList {
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+}
+
+/* Lightens background color on hover */
+@mixin hovLight ($color) {
+    background: $color;
+    &:hover {
+        background: $color + 30;
+    }
+}
+
+/* Darkens background color on hover */
+@mixin hovDark ($color) {
+    background: $color;
+    &:hover {
+        background: $color - 30;
+    }
 }
 
 
