@@ -44,6 +44,27 @@
     font: italic normal $size 'Droid Serif';
 }
 
+/* Cross browser opacity */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+
+/* REMS with a PX Fallback */
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+
 
 /* REQUIRES COMPASS */
 
