@@ -1,0 +1,72 @@
+/* Scott's Dope Mixins v0.4*/
+
+
+// Objects 
+
+z = {
+    neg: -7,
+    lowest: 1,
+    low: 4,
+    mid: 5,
+    video: 7,
+    header: 8,
+    nav: 9,
+    modal: 10,
+    highest: 11
+}
+
+social = {
+    twitter: #00aced,
+    facebook: #3b5998,
+    google: #dd4b39,
+    youtube: #bb0000
+}
+
+
+// Material Shadows
+shadow-level(l = 1)
+    if l == -1
+        box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.7);
+    if l == 0
+        box-shadow: none;
+    if l == 1
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    if l == 2
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    if l == 3
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    if l == 4
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    if l == 5
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+// Common Transition
+trans($sec = 0.3s)
+    transition: all $sec ease
+
+
+/* Removes margin and padding and list style from lists */
+noList()
+    padding: 0
+    margin: 0
+    li
+        padding: 0
+        margin: 0
+        list-style: none
+
+/* Lightens background color on hover */
+hovLight($color)
+    background: $color
+    &:hover
+        background: $color + 30
+
+/* Darkens background color on hover */
+hovDark($color)
+    background: $color
+    &:hover
+        background: $color - 30
+
+
+/* A re-useable font mixin for whatever fonts you are using, allows for an optional color argument */
+serif($size)
+    font-family: 'Libre Baskerville', serif
